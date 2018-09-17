@@ -41,29 +41,32 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void handleDecrement(View view) {
-        mCounter = mCounter - 1;
+    public void handle3fixes(View view) {
+        mCounter = 0;
         updateView();
     }
 
-    public void handleIncrement(View view) {
-        mCounter += 1;
+    public void handle2fixes(View view) {
+        mCounter = 25;
         updateView();
     }
+
+    public void handle1fixes(View view) {
+        mCounter = 75;
+        updateView();
+    }
+
+    public void handle0fixes(View view) {
+        mCounter = 150;
+        updateView();
+    }
+
+
 
 
     private void updateView() {
 
-        if (mCounter > 10)
-        {
-            mMessageTextView.setVisibility(View.INVISIBLE);
-        }
-        else
-        {
-            mMessageTextView.setVisibility(View.VISIBLE);
-        }
-
-        mMessageTextView.setText(getString(R.string.message_format, mCounter));
+         mMessageTextView.setText(getString(R.string.message_format, mCounter));
 
     }
 }
