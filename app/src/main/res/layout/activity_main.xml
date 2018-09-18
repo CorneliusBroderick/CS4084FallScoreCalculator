@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:background="@color/background"
     tools:context=".MainActivity">
 
@@ -11,13 +12,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="217dp"
+        android:layout_below="@+id/message_textview"
         android:orientation="horizontal">
+        android:layout_marginStart="10dp"
+
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
             android:layout_weight="1"
             android:onClick="handle3fixes"
             android:text="@string/button_3_fixes" />
@@ -37,6 +40,7 @@
             android:text="@string/button_1_fixes" />
 
         <Button
+            android:layout_marginEnd="10dp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -47,12 +51,13 @@
 
     <TextView
         android:id="@+id/message_textview"
-        android:layout_width="match_parent"
+        android:layout_width="337dp"
         android:layout_height="wrap_content"
 
-        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="98dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="11dp"
+        android:layout_marginStart="10dp"
         android:text="@string/message_start"
         android:textColor="@color/text"
         android:textSize="18sp" />
@@ -60,17 +65,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="417dp"
+        android:layout_marginBottom="8dp"
         android:orientation="horizontal">
-
 
 
         <Button
             android:id="@+id/reset_button"
-            android:layout_width="0dp"
+            android:layout_width="96dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="205dp"
             android:layout_weight="1"
             android:text="@string/button_reset" />
 
