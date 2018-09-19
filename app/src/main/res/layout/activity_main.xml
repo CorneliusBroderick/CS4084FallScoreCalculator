@@ -180,7 +180,9 @@
         android:id="@+id/message_white_black_points_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/update_button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/button_wb_failure"
+        android:layout_marginBottom="223dp"
         android:padding="5dp"
         android:text="@string/message_white_black_points_label"
         android:textColor="@color/text"
@@ -191,12 +193,34 @@
         android:id="@+id/message_white_black_points"
         android:layout_width="151dp"
         android:layout_height="29dp"
-        android:layout_alignEnd="@+id/message_textview"
-        android:layout_below="@+id/update_button"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/message_white_black_points_label"
+        android:layout_marginEnd="24dp"
         android:gravity="right"
         android:text="@string/message_white_black_points_initial"
-        android:textColor="@color/text"
-         />
+        android:textColor="@color/text" />
+
+
+    <Button
+        android:id="@+id/button_wb_failure"
+        android:layout_width="154dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/button_wb_success"
+        android:layout_marginStart="25dp"
+        android:layout_weight="1"
+        android:text="@string/button_wb_failure" />
+
+
+    <Button
+        android:id="@+id/button_wb_success"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/message_white_black_points"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="158dp"
+        android:layout_weight="1"
+        android:text="@string/button_wb_success" />
 
 
     <TextView
@@ -245,4 +269,14 @@
             android:text="@string/button_reset" />
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/message_total_score_initial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="92dp"
+        android:text="@string/message_total_score_initial"
+        android:textSize="32sp" />
 </RelativeLayout>
