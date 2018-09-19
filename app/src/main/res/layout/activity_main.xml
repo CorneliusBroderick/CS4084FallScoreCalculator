@@ -100,7 +100,7 @@
                 android:layout_weight="1"
                 />
             <TextView
-                android:text=""
+                android:text="_____________"
                 android:padding="5dip"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -108,7 +108,7 @@
                 />
 
             <TextView
-                android:text=""
+                android:text="0"
                 android:padding="5dip"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -125,14 +125,14 @@
                 android:layout_weight="1"
                 />
             <TextView
-                android:text=""
+                android:text="_____________"
                 android:padding="5dip"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 />
             <TextView
-                android:text=""
+                android:text="0"
                 android:padding="5dip"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -149,14 +149,14 @@
                 android:layout_weight="1"
                 />
             <TextView
-                android:text=""
+                android:text="_____________"
                 android:padding="5dip"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 />
             <TextView
-                android:text=""
+                android:text="0"
                 android:padding="5dip"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -165,6 +165,40 @@
         </TableRow>
 
     </TableLayout>
+
+    <Button
+        android:id="@+id/update_button"
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="44dp"
+        android:layout_weight="1"
+        android:text="@string/button_update" />
+
+    <TextView
+        android:id="@+id/message_white_black_points_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/update_button"
+        android:padding="5dp"
+        android:text="@string/message_white_black_points_label"
+        android:textColor="@color/text"
+        android:textSize="12sp" />
+
+
+    <TextView
+        android:id="@+id/message_white_black_points"
+        android:layout_width="151dp"
+        android:layout_height="29dp"
+        android:layout_alignEnd="@+id/message_textview"
+        android:layout_below="@+id/update_button"
+        android:gravity="right"
+        android:text="@string/message_white_black_points_initial"
+        android:textColor="@color/text"
+         />
+
+
     <TextView
         android:id="@+id/message_textview"
         android:layout_width="337dp"
@@ -192,6 +226,7 @@
         android:padding="2dp"
         android:textColor="@color/text"
         android:textSize="18sp" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
