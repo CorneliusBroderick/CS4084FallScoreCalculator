@@ -4,8 +4,7 @@
     <string name="message_color_label">Color Identification: </string>
     <string name="message_color_points_initial">0 color points</string>
     <string name="message_color_points">%d color points</string>
-    <string name="message_total_score">%d points</string>
-    <string name="message_total_score_initial">0 points</string>
+
 
     <string name="button_3_fixes">3 FIXES</string>
     <string name="button_2_fixes">2 FIXES</string>
@@ -20,5 +19,14 @@
     <string name="message_far_ball">Far Ball</string>
     <string name="message_robot_home">Robot Home</string>
 
-    <string name="button_reset">Reset</string>
+    <string name="button_update">UPDATE</string>
+    <string name="button_wb_failure">WB FAILURE</string>
+    <string name="button_wb_success">WB SUCCESS</string>
+    <string name="button_reset">RESET</string>
+
+    <string name="message_white_black_points_label">White/Black (WB) Mission:</string>
+    <string name="message_white_black_points_initial">0 wb points</string>
+    <string name="message_white_black_points">%d wb points</string>
+    <string name="message_total_score">%d points</string>
+    <string name="message_total_score_initial">0 points</string>
 </resources>
