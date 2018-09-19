@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Code you add goes after the setContentView
-        mMessageTextView = findViewById(R.id.message_textview2);
+        mMessageTextView = findViewById(R.id.message_color_points_initial);
 
         final Button resetButton = findViewById(R.id.reset_button);
         resetButton.setOnClickListener(new View.OnClickListener() {
