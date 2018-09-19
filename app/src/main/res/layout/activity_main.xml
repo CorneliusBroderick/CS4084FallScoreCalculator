@@ -60,13 +60,11 @@
     />
 
     <TableLayout
+        android:id="@+id/TableLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:stretchColumns="2"
         android:layout_below="@id/message_distance_from_cones">
-
-
-
         <TableRow>
             <TextView
                 android:text=""
@@ -168,12 +166,11 @@
 
     <Button
         android:id="@+id/update_button"
-        android:layout_width="96dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
-        android:layout_marginEnd="44dp"
-        android:layout_weight="1"
+        android:layout_toEndOf="@+id/message_total_score_initial"
+        android:gravity="right"
         android:text="@string/button_update" />
 
     <TextView
@@ -251,26 +248,8 @@
         android:textColor="@color/text"
         android:textSize="18sp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="8dp"
-        android:orientation="horizontal">
 
-
-        <Button
-            android:id="@+id/reset_button"
-            android:layout_width="96dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="205dp"
-            android:layout_weight="1"
-            android:text="@string/button_reset" />
-
-    </LinearLayout>
-
-    <TextView
+     <TextView
         android:id="@+id/message_total_score_initial"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -279,4 +258,16 @@
         android:layout_marginBottom="92dp"
         android:text="@string/message_total_score_initial"
         android:textSize="32sp" />
+
+    <Button
+        android:id="@+id/reset_button"
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/update_button"
+        android:layout_alignRight="@+id/update_button"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="34dp"
+        android:layout_weight="1"
+        android:text="@string/button_reset" />
+
 </RelativeLayout>
