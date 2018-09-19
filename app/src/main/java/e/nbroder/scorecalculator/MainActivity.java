@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Code you add goes after the setContentView
-        mMessageTextView = findViewById(R.id.message_textview);
+        mMessageTextView = findViewById(R.id.message_textview2);
 
         final Button resetButton = findViewById(R.id.reset_button);
         resetButton.setOnClickListener(new View.OnClickListener() {
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateView() {
 
-         mMessageTextView.setText(getString(R.string.message_format, mCounter));
+         mMessageTextView.setText(getString(R.string.message_color_points, mCounter));
 
     }
 }

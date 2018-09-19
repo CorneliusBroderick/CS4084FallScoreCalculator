@@ -1,12 +1,24 @@
 <resources>
     <string name="app_name">Score Calculator</string>
 
-    <string name="message_start">Color Identification: 0 color points</string>
-    <string name="message_format">Color Identification: %d color points</string>
-    <string name="message_total_score">0 points</string>
+    <string name="message_color_label">Color Identification: </string>
+    <string name="message_color_points_initial">0 color points</string>
+    <string name="message_color_points">%d color points</string>
+    <string name="message_total_score">%d points</string>
+    <string name="message_total_score_initial">0 points</string>
+
     <string name="button_3_fixes">3 FIXES</string>
     <string name="button_2_fixes">2 FIXES</string>
     <string name="button_1_fixes">1 FIXES</string>
     <string name="button_0_fixes">0 FIXES</string>
+
+    <string name="message_distance_from_cones">Distance from cones:</string>
+    <string name="meaages_distance_ft">Distance [ft]</string>
+    <string name="message_points">Points</string>
+
+    <string name="message_near_ball">Near Ball</string>
+    <string name="message_far_ball">Far Ball</string>
+    <string name="message_robot_home">Robot Home</string>
+
     <string name="button_reset">Reset</string>
 </resources>
