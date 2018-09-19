@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private int mCounter = 0;
+    private int mColorIdentificationScore = 0;
     private TextView mMessageTextView;
 
     @Override
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         resetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mCounter = 0;
+                mColorIdentificationScore = 0;
                 updateView();
             }
         });
@@ -42,22 +42,22 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void handle3fixes(View view) {
-        mCounter = 0;
+        mColorIdentificationScore = 0;
         updateView();
     }
 
     public void handle2fixes(View view) {
-        mCounter = 25;
+        mColorIdentificationScore = 25;
         updateView();
     }
 
     public void handle1fixes(View view) {
-        mCounter = 75;
+        mColorIdentificationScore = 75;
         updateView();
     }
 
     public void handle0fixes(View view) {
-        mCounter = 150;
+        mColorIdentificationScore = 150;
         updateView();
     }
 
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateView() {
 
-         mMessageTextView.setText(getString(R.string.message_color_points, mCounter));
-
+         mMessageTextView.setText(getString(R.string.message_color_points, mColorIdentificationScore));
+         mMessageTextView.setText(getString(R.string.message_total_score, mColorIdentificationScore));
     }
 }
