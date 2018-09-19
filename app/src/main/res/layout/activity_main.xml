@@ -12,9 +12,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_below="@+id/message_color_label"
         android:orientation="horizontal"
         android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
         android:id="@+id/fixes_button">
 
 
@@ -22,6 +24,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="1dp"
+            android:layout_marginLeft="1dp"
             android:layout_weight="1"
             android:onClick="handle3fixes"
             android:text="@string/button_3_fixes" />
@@ -42,6 +45,7 @@
 
         <Button
             android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -170,16 +174,17 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_toEndOf="@+id/message_total_score_initial"
+        android:layout_toRightOf="@id/message_total_score_initial"
         android:gravity="right"
         android:text="@string/button_update" />
 
     <TextView
         android:id="@+id/message_white_black_points_label"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/button_wb_failure"
-        android:layout_marginBottom="223dp"
+        android:layout_height="37dp"
+        android:layout_alignStart="@+id/fixes_button"
+        android:layout_alignLeft="@id/fixes_button"
+        android:layout_below="@+id/update_button"
         android:padding="5dp"
         android:text="@string/message_white_black_points_label"
         android:textColor="@color/text"
@@ -188,33 +193,40 @@
 
     <TextView
         android:id="@+id/message_white_black_points"
-        android:layout_width="151dp"
-        android:layout_height="29dp"
+        android:layout_width="wrap_content"
+        android:layout_height="37dp"
+        android:padding="5dp"
         android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/message_white_black_points_label"
-        android:layout_marginEnd="24dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/update_button"
+        android:layout_marginEnd="14dp"
+        android:layout_marginRight="14dp"
         android:gravity="right"
         android:text="@string/message_white_black_points_initial"
-        android:textColor="@color/text" />
+        android:textColor="@color/text"
+        android:textSize="12sp" />
 
 
     <Button
         android:id="@+id/button_wb_failure"
-        android:layout_width="154dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignTop="@+id/button_wb_success"
-        android:layout_marginStart="25dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
         android:layout_weight="1"
         android:text="@string/button_wb_failure" />
 
 
     <Button
         android:id="@+id/button_wb_success"
-        android:layout_width="150dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/message_white_black_points"
         android:layout_alignParentBottom="true"
+        android:layout_alignRight="@id/message_white_black_points"
         android:layout_marginBottom="158dp"
         android:layout_weight="1"
         android:text="@string/button_wb_success" />
@@ -229,6 +241,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="11dp"
         android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
         android:text="@string/message_color_label"
         android:textColor="@color/text"
         android:textSize="18sp" />
@@ -242,6 +255,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="11dp"
         android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
         android:text="@string/message_color_points_initial"
         android:gravity="right"
         android:padding="2dp"
