@@ -4,12 +4,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     private int mColorIdentificationScore = 0;
+    private int mTotalScore = 0;
     private TextView mMessageTextView;
+
+    private EditText mNearBallDistanceEditText;
+    private EditText mFarBallDistanceEditText;
+    private EditText mRobotHomeDistanceEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,5 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
          mMessageTextView.setText(getString(R.string.message_color_points, mColorIdentificationScore));
          mMessageTextView.setText(getString(R.string.message_total_score, mColorIdentificationScore));
+         mTotalScore = mColorIdentificationScore;
+
     }
 }

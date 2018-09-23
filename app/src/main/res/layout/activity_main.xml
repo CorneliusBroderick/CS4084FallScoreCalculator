@@ -101,21 +101,21 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 />
-            <TextView
-                android:text="_____________"
-                android:padding="5dip"
-                android:layout_width="0dp"
+
+            <EditText
+                android:id="@+id/mNearBallDistanceEditText"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                />
+                android:inputType="textMultiLine"
+                android:layout_weight="1"/>
 
             <TextView
-                android:text="0"
-                android:padding="5dip"
+                android:id="@+id/mNearBallDistanceTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                />
+                android:padding="5dip"
+                android:text="0" />
         </TableRow>
 
         <TableRow>
@@ -124,16 +124,17 @@
                 android:padding="5dip"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                />
-            <TextView
-                android:text="_____________"
-                android:padding="5dip"
-                android:layout_width="0dp"
+                android:layout_weight="1"/>
+
+            <EditText
+                android:id="@+id/mFarBallDistanceEditText"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                />
+                android:inputType="textMultiLine"
+                android:layout_weight="1"/>
+
             <TextView
+                android:id="@+id/mFarBallDistanceTextView"
                 android:text="0"
                 android:padding="5dip"
                 android:layout_width="0dp"
@@ -150,14 +151,15 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 />
-            <TextView
-                android:text="_____________"
-                android:padding="5dip"
-                android:layout_width="0dp"
+            <EditText
+                android:id="@+id/mRobotHomeDistanceEditText"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                />
+                android:inputType="textMultiLine"
+                android:layout_weight="1"/>
+
             <TextView
+                android:id="@+id/mRobotHomeDistanceTextView"
                 android:text="0"
                 android:padding="5dip"
                 android:layout_width="0dp"
@@ -172,19 +174,18 @@
         android:id="@+id/update_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_toEndOf="@+id/message_total_score_initial"
-        android:layout_toRightOf="@id/message_total_score_initial"
+        android:layout_alignEnd="@+id/message_color_label"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="219dp"
         android:gravity="right"
         android:text="@string/button_update" />
 
     <TextView
         android:id="@+id/message_white_black_points_label"
         android:layout_width="wrap_content"
-        android:layout_height="37dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_wb_failure"
         android:layout_alignStart="@+id/fixes_button"
-        android:layout_alignLeft="@id/fixes_button"
-        android:layout_below="@+id/update_button"
         android:padding="5dp"
         android:text="@string/message_white_black_points_label"
         android:textColor="@color/text"
@@ -194,14 +195,11 @@
     <TextView
         android:id="@+id/message_white_black_points"
         android:layout_width="wrap_content"
-        android:layout_height="37dp"
-        android:padding="5dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/update_button"
-        android:layout_marginEnd="14dp"
-        android:layout_marginRight="14dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/update_button"
+        android:layout_alignTop="@+id/message_white_black_points_label"
         android:gravity="right"
+        android:padding="5dp"
         android:text="@string/message_white_black_points_initial"
         android:textColor="@color/text"
         android:textSize="12sp" />
@@ -224,10 +222,8 @@
         android:id="@+id/button_wb_success"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/message_white_black_points"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@id/message_white_black_points"
-        android:layout_marginBottom="158dp"
+        android:layout_above="@+id/message_total_score_initial"
+        android:layout_alignStart="@+id/update_button"
         android:layout_weight="1"
         android:text="@string/button_wb_success" />
 
@@ -263,13 +259,12 @@
         android:textSize="18sp" />
 
 
-     <TextView
+    <TextView
         android:id="@+id/message_total_score_initial"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_above="@+id/reset_button"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="92dp"
         android:text="@string/message_total_score_initial"
         android:textSize="32sp" />
 
@@ -277,10 +272,9 @@
         android:id="@+id/reset_button"
         android:layout_width="96dp"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/update_button"
-        android:layout_alignRight="@+id/update_button"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="34dp"
+        android:layout_alignStart="@+id/update_button"
+        android:layout_marginBottom="26dp"
         android:layout_weight="1"
         android:text="@string/button_reset" />
 
