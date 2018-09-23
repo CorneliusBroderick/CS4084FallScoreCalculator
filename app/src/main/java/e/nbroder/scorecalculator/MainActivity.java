@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class MainActivity extends AppCompatActivity {
 
     private int mColorIdentificationScore = 0;
@@ -17,6 +19,10 @@ public class MainActivity extends AppCompatActivity {
     private EditText mFarBallDistanceEditText;
     private EditText mRobotHomeDistanceEditText;
 
+    private TextView mNearBallDistanceTextView;
+    private TextView mFarBallDistanceTextView;
+    private TextView mRobotHomeDistanceTextView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // This method is called when the app launches
@@ -25,6 +31,14 @@ public class MainActivity extends AppCompatActivity {
 
         // Code you add goes after the setContentView
         mMessageTextView = findViewById(R.id.message_color_points_initial);
+
+        mNearBallDistanceEditText = findViewById(R.id.mNearBallDistanceEditText);
+        mFarBallDistanceEditText = findViewById(R.id.mFarBallDistanceEditText);
+        mRobotHomeDistanceEditText = findViewById(R.id.mRobotHomeDistanceEditText);
+
+        mNearBallDistanceTextView = findViewById(R.id.mFarBallDistanceTextView);
+        mFarBallDistanceTextView = findViewById(R.id.mFarBallDistanceTextView);
+        mRobotHomeDistanceTextView = findViewById(R.id.mRobotHomeDistanceTextView);
 
         final Button resetButton = findViewById(R.id.reset_button);
         resetButton.setOnClickListener(new View.OnClickListener() {
@@ -35,6 +49,33 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        int nearBallDistance;
+        try {
+            nearBallDistance = Integer.parseInt(mNearBallDistanceEditText.getText().toString());
+        } catch (NumberFormatException e) {
+            nearBallDistance = 100; //Some big number
+        }
+
+        nearBallDistance += 5;
+        mNearBallDistanceTextView.setText("" + nearBallDistance);
+
+        int farBallDistance;
+        try {
+            farBallDistance= Integer.parseInt(mFarBallDistanceEditText.getText().toString());
+        } catch (NumberFormatException e) {
+            farBallDistance = 100; //Some big number
+        }
+        farBallDistance += 5;
+        mFarBallDistanceTextView.setText("" + farBallDistance);
+
+        int robotHomeDistance;
+        try {
+            robotHomeDistance = Integer.parseInt(mRobotHomeDistanceEditText.getText().toString());
+        } catch (NumberFormatException e) {
+            robotHomeDistance = 100; //Some big number
+        }
+        robotHomeDistance += 5;
+        mRobotHomeDistanceTextView.setText("" + robotHomeDistance);
 
         // temp area
         //mMessageTextView.setText("Niall is the coolest programmer ever!!!!!");
@@ -68,13 +109,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-
     private void updateView() {
 
-         mMessageTextView.setText(getString(R.string.message_color_points, mColorIdentificationScore));
-         mMessageTextView.setText(getString(R.string.message_total_score, mColorIdentificationScore));
-         mTotalScore = mColorIdentificationScore;
+        mMessageTextView.setText(getString(R.string.message_color_points, mColorIdentificationScore));
+        mMessageTextView.setText(getString(R.string.message_total_score, mColorIdentificationScore));
+        mTotalScore = mColorIdentificationScore;
 
     }
 }
