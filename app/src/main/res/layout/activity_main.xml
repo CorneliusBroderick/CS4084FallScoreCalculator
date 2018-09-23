@@ -82,7 +82,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="5dip"
-                android:text="@string/meaages_distance_ft" />
+                android:text="@string/messages_distance_ft" />
 
             <TextView
                 android:layout_width="0dp"
@@ -106,7 +106,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:inputType="textMultiLine" />
+                android:inputType="textMultiLine"
+                android:onClick="handleNearBallDistance"/>
 
             <TextView
                 android:id="@+id/mNearBallPointsTextView"
@@ -131,7 +132,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:inputType="textMultiLine" />
+                android:inputType="textMultiLine"
+                android:onClick="handleFarBallDistance"/>
 
             <TextView
                 android:id="@+id/mFarBallDistanceTextView"
@@ -139,7 +141,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="5dip"
-                android:text="0" />
+                android:text="0"
+                android:onClick="handleFarBallDistance"/>
         </TableRow>
 
         <TableRow>
@@ -156,7 +159,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:inputType="textMultiLine" />
+                android:inputType="textMultiLine"
+                android:onClick="handleRobotHomeDistance"/>
 
             <TextView
                 android:id="@+id/mRobotHomeDistanceTextView"

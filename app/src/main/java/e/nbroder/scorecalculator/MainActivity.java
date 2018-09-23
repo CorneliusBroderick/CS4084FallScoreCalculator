@@ -7,13 +7,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 public class MainActivity extends AppCompatActivity {
 
     private int mColorIdentificationScore = 0;
+    private int mWhiteBlackMissionScore = 0;
     private int mTotalScore = 0;
     private TextView mMessageTextView;
+    private TextView mMessageTotalScore;
 
     private EditText mNearBallDistanceEditText;
     private EditText mFarBallDistanceEditText;
@@ -31,12 +31,13 @@ public class MainActivity extends AppCompatActivity {
 
         // Code you add goes after the setContentView
         mMessageTextView = findViewById(R.id.message_color_points_initial);
+        mMessageTotalScore = findViewById(R.id.message_total_score_initial);
 
         mNearBallDistanceEditText = findViewById(R.id.mNearBallDistanceEditText);
         mFarBallDistanceEditText = findViewById(R.id.mFarBallDistanceEditText);
         mRobotHomeDistanceEditText = findViewById(R.id.mRobotHomeDistanceEditText);
 
-        mNearBallDistanceTextView = findViewById(R.id.mFarBallDistanceTextView);
+        mNearBallDistanceTextView = findViewById(R.id.mNearBallPointsTextView);
         mFarBallDistanceTextView = findViewById(R.id.mFarBallDistanceTextView);
         mRobotHomeDistanceTextView = findViewById(R.id.mRobotHomeDistanceTextView);
 
@@ -49,34 +50,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        int nearBallDistance;
-        try {
-            nearBallDistance = Integer.parseInt(mNearBallDistanceEditText.getText().toString());
-        } catch (NumberFormatException e) {
-            nearBallDistance = 100; //Some big number
-        }
-
-        nearBallDistance += 5;
-        mNearBallDistanceTextView.setText("" + nearBallDistance);
-
-        int farBallDistance;
-        try {
-            farBallDistance= Integer.parseInt(mFarBallDistanceEditText.getText().toString());
-        } catch (NumberFormatException e) {
-            farBallDistance = 100; //Some big number
-        }
-        farBallDistance += 5;
-        mFarBallDistanceTextView.setText("" + farBallDistance);
-
-        int robotHomeDistance;
-        try {
-            robotHomeDistance = Integer.parseInt(mRobotHomeDistanceEditText.getText().toString());
-        } catch (NumberFormatException e) {
-            robotHomeDistance = 100; //Some big number
-        }
-        robotHomeDistance += 5;
-        mRobotHomeDistanceTextView.setText("" + robotHomeDistance);
-
         // temp area
         //mMessageTextView.setText("Niall is the coolest programmer ever!!!!!");
         //Log.d("HB", "This is a log cat log. Logs are important!");
@@ -87,6 +60,45 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void handleNearBallDistance(View view) {
+        int nearBallDistance;
+        try
+        {
+            nearBallDistance = Integer.parseInt(mNearBallDistanceEditText.getText().toString());
+        }
+        catch (NumberFormatException e)
+        {
+            nearBallDistance = 1000; //Some big number
+        }
+
+        if (nearBallDistance < 5) {
+            mNearBallDistanceTextView.setText("" + 110);
+        }
+    }
+
+    public void handleFarBallDistance(View view) {
+        int farBallDistance;
+        try {
+            farBallDistance = Integer.parseInt(mFarBallDistanceEditText.getText().toString());
+        } catch (NumberFormatException e)
+        {
+            farBallDistance = 2000; //Some big number
+        }
+        farBallDistance += 5;
+        mFarBallDistanceTextView.setText("" + farBallDistance);
+    }
+
+    public void handleRobotHomeDistance(View view) {
+        int robotHomeDistance;
+        try {
+            robotHomeDistance = Integer.parseInt(mRobotHomeDistanceEditText.getText().toString());
+        } catch (NumberFormatException e)
+        {
+            robotHomeDistance = 3000; //Some big number
+        }
+        robotHomeDistance += 5;
+        mRobotHomeDistanceTextView.setText("" + robotHomeDistance);
+    }
 
     public void handle3fixes(View view) {
         mColorIdentificationScore = 0;
@@ -112,8 +124,8 @@ public class MainActivity extends AppCompatActivity {
     private void updateView() {
 
         mMessageTextView.setText(getString(R.string.message_color_points, mColorIdentificationScore));
-        mMessageTextView.setText(getString(R.string.message_total_score, mColorIdentificationScore));
-        mTotalScore = mColorIdentificationScore;
 
+        mTotalScore = mColorIdentificationScore;
+        mMessageTotalScore.setText(getString(R.string.message_total_score, mTotalScore));
     }
 }
