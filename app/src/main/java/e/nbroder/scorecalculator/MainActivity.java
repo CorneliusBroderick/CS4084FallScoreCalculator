@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
                 updateView();
             }
         });
+
         // temp area
         //mMessageTextView.setText("Niall is the coolest programmer ever!!!!!");
         //Log.d("HB", "This is a log cat log. Logs are important!");
@@ -81,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void handleNearBallDistance(View view) {
         int nearBallDistance;
+
         try
         {
             nearBallDistance = Integer.parseInt(mNearBallDistanceEditText.getText().toString());
@@ -90,12 +92,9 @@ public class MainActivity extends AppCompatActivity {
             nearBallDistance = 1000; //Some big number
         }
 
-        if (nearBallDistance < 5) {
-            mNearBallDistanceTextView.setText("110");
-        }
-        else {
-            mNearBallDistanceTextView.setText("Not less than 5");
-        }
+        nearBallDistance += 5;
+        mNearBallDistanceTextView.setText("" + nearBallDistance);
+
     }
 
     public void handleFarBallDistance(View view) {

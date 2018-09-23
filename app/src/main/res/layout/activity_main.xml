@@ -108,6 +108,7 @@
                 android:layout_weight="1"
                 android:inputType="textMultiLine"
                 android:onClick="handleNearBallDistance"/>
+                />
 
             <TextView
                 android:id="@+id/mNearBallPointsTextView"
@@ -115,7 +116,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="5dip"
-                android:text="@string/NearBallPointsTextView" />
+                android:text="@string/just_zero" />
         </TableRow>
 
         <TableRow>
@@ -141,7 +142,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="5dip"
-                android:text="@string/FarBallPointsTextView"
+                android:text="@string/just_zero"
                 />
         </TableRow>
 
@@ -168,7 +169,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="5dip"
-                android:text="@string/RobotHomePointsTextView" />
+                android:text="@string/just_zero" />
         </TableRow>
 
     </TableLayout>
