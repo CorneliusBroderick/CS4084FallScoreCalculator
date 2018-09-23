@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private int mTotalScore = 0;
     private TextView mMessageTextView;
     private TextView mMessageTotalScore;
-
+    private TextView mMessageWBScore;
     private EditText mNearBallDistanceEditText;
     private EditText mFarBallDistanceEditText;
     private EditText mRobotHomeDistanceEditText;
@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         // Code you add goes after the setContentView
         mMessageTextView = findViewById(R.id.message_color_points_initial);
         mMessageTotalScore = findViewById(R.id.message_total_score_initial);
+        mMessageWBScore = findViewById(R.id.message_white_black_points);
 
         mNearBallDistanceEditText = findViewById(R.id.mNearBallDistanceEditText);
         mFarBallDistanceEditText = findViewById(R.id.mFarBallDistanceEditText);
@@ -46,10 +47,28 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mColorIdentificationScore = 0;
+                mWhiteBlackMissionScore = 0;
                 updateView();
             }
         });
 
+        final Button WBSuccess = findViewById(R.id.button_wb_success);
+        WBSuccess.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mWhiteBlackMissionScore = 60;
+                updateView();
+            }
+        });
+
+        final Button WBFailure = findViewById(R.id.button_wb_failure);
+        WBFailure.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mWhiteBlackMissionScore = 0;
+                updateView();
+            }
+        });
         // temp area
         //mMessageTextView.setText("Niall is the coolest programmer ever!!!!!");
         //Log.d("HB", "This is a log cat log. Logs are important!");
@@ -72,7 +91,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (nearBallDistance < 5) {
-            mNearBallDistanceTextView.setText("" + 110);
+            mNearBallDistanceTextView.setText("110");
+        }
+        else {
+            mNearBallDistanceTextView.setText("Not less than 5");
         }
     }
 
@@ -124,8 +146,8 @@ public class MainActivity extends AppCompatActivity {
     private void updateView() {
 
         mMessageTextView.setText(getString(R.string.message_color_points, mColorIdentificationScore));
-
-        mTotalScore = mColorIdentificationScore;
+        mMessageWBScore.setText(getString(R.string.message_white_black_points,mWhiteBlackMissionScore));
+        mTotalScore = mColorIdentificationScore + mWhiteBlackMissionScore;
         mMessageTotalScore.setText(getString(R.string.message_total_score, mTotalScore));
     }
 }

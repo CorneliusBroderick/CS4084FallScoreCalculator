@@ -115,7 +115,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="5dip"
-                android:text="0" />
+                android:text="@string/NearBallPointsTextView" />
         </TableRow>
 
         <TableRow>
@@ -141,8 +141,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="5dip"
-                android:text="0"
-                android:onClick="handleFarBallDistance"/>
+                android:text="@string/FarBallPointsTextView"
+                />
         </TableRow>
 
         <TableRow>
@@ -168,7 +168,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="5dip"
-                android:text="0" />
+                android:text="@string/RobotHomePointsTextView" />
         </TableRow>
 
     </TableLayout>
@@ -192,7 +192,7 @@
         android:padding="5dp"
         android:text="@string/message_white_black_points_label"
         android:textColor="@color/text"
-        android:textSize="12sp" />
+        android:textSize="14sp" />
 
 
     <TextView
