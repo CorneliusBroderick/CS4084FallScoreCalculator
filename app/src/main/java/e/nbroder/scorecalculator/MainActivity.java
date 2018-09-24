@@ -65,6 +65,12 @@ public class MainActivity extends AppCompatActivity {
                 scoreForFarBallDistance = 0;
                 scoreForNearBallDistance = 0;
                 scoreForRobotHomeDistance = 0;
+                mFarBallDistanceTextView.setText("" + scoreForFarBallDistance);
+                mNearBallDistanceTextView.setText("" + scoreForNearBallDistance);
+                mRobotHomeDistanceTextView.setText("" + scoreForRobotHomeDistance);
+                mFarBallDistanceEditText.setText("");
+                mNearBallDistanceEditText.setText("");
+                mRobotHomeDistanceEditText.setText("");
 
                 updateView();
             }
