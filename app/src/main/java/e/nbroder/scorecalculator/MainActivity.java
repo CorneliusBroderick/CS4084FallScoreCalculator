@@ -12,6 +12,9 @@ public class MainActivity extends AppCompatActivity {
     private int mColorIdentificationScore = 0;
     private int mWhiteBlackMissionScore = 0;
     private int mTotalScore = 0;
+    private int scoreForNearBallDistance = 0;
+    private int scoreForFarBallDistance = 0;
+    private int scoreForRobotHomeDistance = 0;
     private TextView mMessageTextView;
     private TextView mMessageTotalScore;
     private TextView mMessageWBScore;
@@ -59,6 +62,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 mColorIdentificationScore = 0;
                 mWhiteBlackMissionScore = 0;
+                scoreForFarBallDistance = 0;
+                scoreForNearBallDistance = 0;
+                scoreForRobotHomeDistance = 0;
+
                 updateView();
             }
         });
@@ -94,17 +101,41 @@ public class MainActivity extends AppCompatActivity {
     public void handleNearBallDistance(View view) {
         int nearBallDistance;
 
+
         try
         {
             nearBallDistance = Integer.parseInt(mNearBallDistanceEditText.getText().toString());
         }
         catch (NumberFormatException e)
         {
-            nearBallDistance = 1000; //Some big number
+            nearBallDistance = 100; //Some big number
+        }
+        // test code
+        //nearBallDistance += 5;
+        //mNearBallDistanceTextView.setText("" + nearBallDistance);
+
+        if (nearBallDistance > 45) {
+            scoreForNearBallDistance = 0;
+        }
+        else if (nearBallDistance <=5){
+            scoreForNearBallDistance = 110;
+        }
+        else if (nearBallDistance <=10){
+            scoreForNearBallDistance = 100;
+        }
+        else if (nearBallDistance <=20){
+            scoreForNearBallDistance = 80;
+        }
+        else if (nearBallDistance <=30){
+            scoreForNearBallDistance = 50;
+        }
+        else if (nearBallDistance <=45){
+            scoreForNearBallDistance = 10;
         }
 
-        nearBallDistance += 5;
-        mNearBallDistanceTextView.setText("" + nearBallDistance);
+
+        mNearBallDistanceTextView.setText("" + scoreForNearBallDistance);
+
 
     }
 
@@ -114,10 +145,35 @@ public class MainActivity extends AppCompatActivity {
             farBallDistance = Integer.parseInt(mFarBallDistanceEditText.getText().toString());
         } catch (NumberFormatException e)
         {
-            farBallDistance = 2000; //Some big number
+            farBallDistance = 200; //Some big number
         }
-        farBallDistance += 5;
-        mFarBallDistanceTextView.setText("" + farBallDistance);
+        // test code
+        //farBallDistance += 5;
+        //mFarBallDistanceTextView.setText("" + farBallDistance);
+
+
+
+        if (farBallDistance > 45) {
+            scoreForFarBallDistance = 0;
+        }
+        else if (farBallDistance <=5){
+            scoreForFarBallDistance = 220;
+        }
+        else if (farBallDistance <=10){
+            scoreForFarBallDistance = 200;
+        }
+        else if (farBallDistance <=20){
+            scoreForFarBallDistance = 160;
+        }
+        else if (farBallDistance <=30){
+            scoreForFarBallDistance = 100;
+        }
+        else if (farBallDistance <=45){
+            scoreForFarBallDistance = 20;
+        }
+
+
+        mFarBallDistanceTextView.setText("" + scoreForFarBallDistance);
     }
 
     public void handleRobotHomeDistance(View view) {
@@ -126,10 +182,34 @@ public class MainActivity extends AppCompatActivity {
             robotHomeDistance = Integer.parseInt(mRobotHomeDistanceEditText.getText().toString());
         } catch (NumberFormatException e)
         {
-            robotHomeDistance = 3000; //Some big number
+            robotHomeDistance = 300; //Some big number
         }
-        robotHomeDistance += 5;
-        mRobotHomeDistanceTextView.setText("" + robotHomeDistance);
+
+        //test code
+        //robotHomeDistance += 5;
+        //mRobotHomeDistanceTextView.setText("" + robotHomeDistance);
+
+        if (robotHomeDistance > 45) {
+            scoreForRobotHomeDistance = 0;
+        }
+        else if (robotHomeDistance <=5){
+            scoreForRobotHomeDistance = 110;
+        }
+        else if (robotHomeDistance <=10){
+            scoreForRobotHomeDistance = 100;
+        }
+        else if (robotHomeDistance <=20){
+            scoreForRobotHomeDistance = 80;
+        }
+        else if (robotHomeDistance <=30){
+            scoreForRobotHomeDistance = 50;
+        }
+        else if (robotHomeDistance <=45){
+            scoreForRobotHomeDistance = 10;
+        }
+
+
+        mRobotHomeDistanceTextView.setText("" + scoreForRobotHomeDistance);
     }
 
     public void handle3fixes(View view) {
@@ -157,7 +237,7 @@ public class MainActivity extends AppCompatActivity {
 
         mMessageTextView.setText(getString(R.string.message_color_points, mColorIdentificationScore));
         mMessageWBScore.setText(getString(R.string.message_white_black_points,mWhiteBlackMissionScore));
-        mTotalScore = mColorIdentificationScore + mWhiteBlackMissionScore;
+        mTotalScore = mColorIdentificationScore + mWhiteBlackMissionScore + scoreForRobotHomeDistance + scoreForNearBallDistance + scoreForFarBallDistance;
         mMessageTotalScore.setText(getString(R.string.message_total_score, mTotalScore));
     }
 }
