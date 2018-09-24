@@ -42,6 +42,17 @@ public class MainActivity extends AppCompatActivity {
         mFarBallDistanceTextView = findViewById(R.id.mFarBallDistanceTextView);
         mRobotHomeDistanceTextView = findViewById(R.id.mRobotHomeDistanceTextView);
 
+        final Button updateButton = findViewById(R.id.update_button);
+        updateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                handleFarBallDistance(v);
+                handleNearBallDistance(v);
+                handleRobotHomeDistance(v);
+                updateView();
+            }
+        });
+
         final Button resetButton = findViewById(R.id.reset_button);
         resetButton.setOnClickListener(new View.OnClickListener() {
             @Override
