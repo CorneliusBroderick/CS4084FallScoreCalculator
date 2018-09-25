@@ -11,19 +11,19 @@
         android:id="@+id/fixes_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:layout_below="@+id/message_color_label"
-        android:layout_marginLeft="10dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
         android:orientation="horizontal">
 
 
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="1dp"
             android:layout_marginStart="1dp"
+            android:layout_marginLeft="1dp"
             android:layout_weight="1"
             android:onClick="handle3fixes"
             android:text="@string/button_3_fixes" />
@@ -66,6 +66,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/message_distance_from_cones"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="-3dp"
         android:stretchColumns="2">
 
         <TableRow>
@@ -107,8 +110,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:inputType="textMultiLine"
-                android:onClick="handleNearBallDistance"/>
-                />
+                android:onClick="handleNearBallDistance" />
+            />
 
             <TextView
                 android:id="@+id/mNearBallPointsTextView"
@@ -134,7 +137,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:inputType="textMultiLine"
-                android:onClick="handleFarBallDistance"/>
+                android:onClick="handleFarBallDistance" />
 
             <TextView
                 android:id="@+id/mFarBallDistanceTextView"
@@ -142,8 +145,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="5dip"
-                android:text="@string/just_zero"
-                />
+                android:text="@string/just_zero" />
         </TableRow>
 
         <TableRow>
@@ -161,7 +163,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:inputType="textMultiLine"
-                android:onClick="handleRobotHomeDistance"/>
+                android:onClick="handleRobotHomeDistance" />
 
             <TextView
                 android:id="@+id/mRobotHomeDistanceTextView"
@@ -172,64 +174,80 @@
                 android:text="@string/just_zero" />
         </TableRow>
 
+        <TableRow>
+
+            <Button
+                android:id="@+id/button_wb_failure"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/button_wb_success"
+                android:layout_weight="1"
+                android:text="@string/button_wb_failure" />
+
+            <Button
+                android:id="@+id/update_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/button_update" />
+
+            <Button
+                android:id="@+id/button_wb_success"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/message_total_score_initial"
+                android:layout_weight="1"
+                android:text="@string/button_wb_success" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/message_white_black_points_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/message_white_black_points_label"
+                android:textColor="@color/text"
+                android:layout_weight="1"
+                />
+
+
+            <TextView
+                android:id="@+id/message_white_black_points"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:padding="5dp"
+                android:text="@string/message_white_black_points_initial"
+                android:textColor="@color/text"
+                />
+        </TableRow>
+
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/message_total_score_initial"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/reset_button"
+                android:layout_weight="1"
+                android:text="@string/message_total_score_initial"
+                android:textSize="32sp" />
+
+            <Button
+                android:id="@+id/reset_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="5dip"
+                android:text="@string/button_reset" />
+        </TableRow>
+
     </TableLayout>
-
-    <Button
-        android:id="@+id/update_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/message_color_label"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="219dp"
-        android:gravity="right"
-        android:text="@string/button_update" />
-
-    <TextView
-        android:id="@+id/message_white_black_points_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/button_wb_failure"
-        android:layout_alignStart="@+id/fixes_button"
-        android:padding="5dp"
-        android:text="@string/message_white_black_points_label"
-        android:textColor="@color/text"
-        android:textSize="14sp" />
-
-
-    <TextView
-        android:id="@+id/message_white_black_points"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/update_button"
-        android:layout_alignTop="@+id/message_white_black_points_label"
-        android:gravity="right"
-        android:padding="5dp"
-        android:text="@string/message_white_black_points_initial"
-        android:textColor="@color/text"
-        android:textSize="12sp" />
-
-
-    <Button
-        android:id="@+id/button_wb_failure"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/button_wb_success"
-        android:layout_marginLeft="11dp"
-        android:layout_marginStart="11dp"
-        android:layout_weight="1"
-        android:text="@string/button_wb_failure" />
-
-
-    <Button
-        android:id="@+id/button_wb_success"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/message_total_score_initial"
-        android:layout_alignStart="@+id/update_button"
-        android:layout_weight="1"
-        android:text="@string/button_wb_success" />
 
 
     <TextView
@@ -239,8 +257,8 @@
 
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="11dp"
         android:text="@string/message_color_label"
         android:textColor="@color/text"
@@ -253,8 +271,8 @@
 
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="11dp"
         android:gravity="right"
         android:padding="2dp"
@@ -262,24 +280,5 @@
         android:textColor="@color/text"
         android:textSize="18sp" />
 
-
-    <TextView
-        android:id="@+id/message_total_score_initial"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/reset_button"
-        android:layout_centerHorizontal="true"
-        android:text="@string/message_total_score_initial"
-        android:textSize="32sp" />
-
-    <Button
-        android:id="@+id/reset_button"
-        android:layout_width="96dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/update_button"
-        android:layout_marginBottom="26dp"
-        android:layout_weight="1"
-        android:text="@string/button_reset" />
 
 </RelativeLayout>
